@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gia Sư AI - Trang chủ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #FFD9EC 0%, #F599C2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            color: white;
+            font-size: 1.25rem;
+            opacity: 0.9;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            animation: slideUp 0.6s ease-out backwards;
+        }
+
+        .card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .card:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h2 {
+            color: #663366;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            color: #718096;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #F599C2 0%, #BAA6E6 100%);
+            color: white;
+            padding: 0.875rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(245, 153, 194, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(245, 153, 194, 0.4);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #663366 0%, #F599C2 100%);
+            font-size: 1.125rem;
+            padding: 1.25rem 2.5rem;
+        }
+
+        .info-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            margin-bottom: 2rem;
+            animation: slideUp 0.6s ease-out 0.5s backwards;
+        }
+
+        .info-box h3 {
+            color: #663366;
+            margin-bottom: 1rem;
+        }
+
+        .info-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-box li {
+            padding: 0.5rem 0;
+            color: #2D3748;
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        .info-box li:last-child {
+            border-bottom: none;
+        }
+
+        .info-box li strong {
+            color: #F599C2;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 3rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌸 Gia Sư AI 🌸</h1>
+            <p class="subtitle">Giải toán và dịch tiếng Anh thông minh cho học sinh</p>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <div class="card-icon">🚀</div>
+                <h2>Bắt đầu sử dụng</h2>
+                <p>Mở ứng dụng và bắt đầu giải bài ngay!</p>
+                <a href="index.html" class="btn btn-primary">Mở App</a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📖</div>
+                <h2>Hướng dẫn</h2>
+                <p>Xem hướng dẫn chi tiết cách sử dụng ứng dụng</p>
+                <a href="guide.html" class="btn">Xem hướng dẫn</a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📱</div>
+                <h2>QR Code</h2>
+                <p>Quét QR code để mở trên điện thoại</p>
+                <a href="qr.html" class="btn">Xem QR Code</a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📚</div>
+                <h2>Tài liệu</h2>
+                <p>Đọc README và tài liệu kỹ thuật</p>
+                <a href="README.md" class="btn">Xem README</a>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h3>✨ Tính năng chính</h3>
+            <ul>
+                <li><strong>📐 Giải toán:</strong> Giải chi tiết các bài Toán, Lý, Hóa với từng bước</li>
+                <li><strong>🎨 Vẽ hình học:</strong> Tự động vẽ hình minh họa cho bài toán hình học</li>
+                <li><strong>🇬🇧 Dịch tiếng Anh:</strong> Trích xuất từ vựng, nghĩa và câu ví dụ</li>
+                <li><strong>🔊 Phát âm:</strong> Text-to-Speech cho từ vựng tiếng Anh</li>
+                <li><strong>💬 Feedback:</strong> Yêu cầu giải lại hoặc giải theo cách khác</li>
+                <li><strong>🤖 Dual AI:</strong> Hỗ trợ cả Gemini và ChatGPT</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h3>🌐 Truy cập từ điện thoại</h3>
+            <ul>
+                <li><strong>Trên máy này:</strong> <code id="localUrl">http://localhost:8000</code></li>
+                <li><strong>Từ điện thoại:</strong> <code id="networkUrl">Đang tải...</code></li>
+                <li><strong>Yêu cầu:</strong> Cùng mạng WiFi</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>Made with 💖 by Pham Quang Huong</p>
+            <p>© 2026 Gia Sư AI - All rights reserved</p>
+        </div>
+    </div>
+
+    <script>
+        // Auto-detect network URL
+        const port = window.location.port || '8000';
+        const protocol = window.location.protocol;
+        const hostname = window.location.hostname;
+
+        if (hostname !== 'localhost' && hostname !== '127.0.0.1') {
+            document.getElementById('networkUrl').textContent = `${protocol}//${hostname}:${port}`;
+        } else {
+            // Try to get network IP (this won't work in browser, just show instruction)
+            document.getElementById('networkUrl').textContent = 'Xem file MOBILE_ACCESS.md';
+        }
+    </script>
+</body>
+
+</html>
