@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -7,34 +8,38 @@
     <meta name="theme-color" content="#FFD9EC">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    
+
     <title>🌸 Gia Sư AI 🌸</title>
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
     <!-- PWA Manifest -->
     <link rel="manifest" href="manifest.json">
-    
+
     <!-- Icons -->
-    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
-    
+    <link rel="icon" type="image/png"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div id="app">
         <!-- Main Screen -->
         <div id="mainScreen" class="screen active">
             <div class="decorative-background"></div>
-            
+
             <div class="container">
                 <!-- Header -->
                 <header class="header">
                     <h1 class="app-title">🌸 Gia Sư AI 🌸</h1>
                     <button class="settings-btn" onclick="app.showSettings()" aria-label="Settings">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
                             <circle cx="12" cy="12" r="3"></circle>
                             <path d="M12 1v6m0 6v6m9-9h-6m-6 0H3"></path>
                         </svg>
@@ -70,11 +75,14 @@
                     </div>
                 </div>
 
+                <!-- Hidden Image Input -->
+                <input type="file" id="imageInput" accept="image/*" style="display: none;">
+
                 <!-- Image Upload Area -->
                 <div class="image-upload-area" id="imageUploadArea">
-                    <input type="file" id="imageInput" accept="image/*" style="display: none;">
                     <div class="upload-placeholder" id="uploadPlaceholder">
-                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
                             <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
                             <circle cx="8.5" cy="8.5" r="1.5"></circle>
                             <polyline points="21 15 16 10 5 21"></polyline>
@@ -82,8 +90,10 @@
                         <p>Chạm để chọn ảnh nha!</p>
                     </div>
                     <img id="previewImage" class="preview-image" style="display: none;">
-                    <button class="remove-image-btn" id="removeImageBtn" style="display: none;" onclick="app.removeImage()">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <button class="remove-image-btn" id="removeImageBtn" style="display: none;"
+                        onclick="app.removeImage()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
                             <line x1="18" y1="6" x2="6" y2="18"></line>
                             <line x1="6" y1="6" x2="18" y2="18"></line>
                         </svg>
@@ -92,20 +102,24 @@
 
                 <!-- Initial Prompt -->
                 <div class="prompt-section" id="promptSection" style="display: none;">
-                    <input type="text" id="initialPrompt" class="prompt-input" placeholder="Ghi chú cho gia sư (ví dụ: Giải bài 2)...">
+                    <input type="text" id="initialPrompt" class="prompt-input"
+                        placeholder="Ghi chú cho gia sư (ví dụ: Giải bài 2)...">
                 </div>
 
                 <!-- Action Buttons -->
                 <div class="action-buttons">
                     <button class="btn btn-camera" onclick="app.openCamera()">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z">
+                            </path>
                             <circle cx="12" cy="13" r="4"></circle>
                         </svg>
                         Chụp ảnh
                     </button>
                     <button class="btn btn-solve" id="solveBtn" onclick="app.solveImage()" disabled>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
                             <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
                         </svg>
                         <span id="solveBtnText">Giải bài!</span>
@@ -125,11 +139,12 @@
         <!-- Result Screen -->
         <div id="resultScreen" class="screen">
             <div class="decorative-background"></div>
-            
+
             <div class="container">
                 <header class="header">
                     <button class="back-btn" onclick="app.showMainScreen()">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
                             <line x1="19" y1="12" x2="5" y2="12"></line>
                             <polyline points="12 19 5 12 12 5"></polyline>
                         </svg>
@@ -145,9 +160,11 @@
                 <!-- Feedback Section -->
                 <div class="feedback-section">
                     <h3>Bạn muốn sửa bài chăng?</h3>
-                    <input type="text" id="feedbackInput" class="feedback-input" placeholder="Nhập yêu cầu sửa (ví dụ: Giải cách khác)...">
+                    <input type="text" id="feedbackInput" class="feedback-input"
+                        placeholder="Nhập yêu cầu sửa (ví dụ: Giải cách khác)...">
                     <button class="btn btn-feedback" id="feedbackBtn" onclick="app.submitFeedback()">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
                             <line x1="22" y1="2" x2="11" y2="13"></line>
                             <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
                         </svg>
@@ -163,7 +180,8 @@
                 <div class="modal-header">
                     <h3 id="modalTitle">Cài đặt API Key</h3>
                     <button class="close-btn" onclick="app.closeSettings()">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
                             <line x1="18" y1="6" x2="6" y2="18"></line>
                             <line x1="6" y1="6" x2="18" y2="18"></line>
                         </svg>
@@ -172,9 +190,11 @@
                 <div class="modal-body">
                     <div class="api-key-section">
                         <label for="geminiKeyInput">Gemini API Key</label>
-                        <input type="password" id="geminiKeyInput" class="api-key-input" placeholder="Nhập Gemini API Key...">
+                        <input type="password" id="geminiKeyInput" class="api-key-input"
+                            placeholder="Nhập Gemini API Key...">
                         <button class="btn-toggle-visibility" onclick="app.toggleKeyVisibility('geminiKeyInput')">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
                                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                 <circle cx="12" cy="12" r="3"></circle>
                             </svg>
@@ -182,9 +202,11 @@
                     </div>
                     <div class="api-key-section">
                         <label for="openaiKeyInput">OpenAI API Key</label>
-                        <input type="password" id="openaiKeyInput" class="api-key-input" placeholder="Nhập OpenAI API Key...">
+                        <input type="password" id="openaiKeyInput" class="api-key-input"
+                            placeholder="Nhập OpenAI API Key...">
                         <button class="btn-toggle-visibility" onclick="app.toggleKeyVisibility('openaiKeyInput')">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
                                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                 <circle cx="12" cy="12" r="3"></circle>
                             </svg>
@@ -198,4 +220,5 @@
 
     <script src="app.js"></script>
 </body>
+
 </html>

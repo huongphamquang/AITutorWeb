@@ -26,18 +26,13 @@ class AITutorApp {
 
         imageUploadArea.addEventListener('click', (e) => {
             if (!e.target.closest('.remove-image-btn')) {
-                // Ensure no capture attribute when clicking the main area
                 imageInput.removeAttribute('capture');
-                // Small delay to ensure state is clear
-                setTimeout(() => {
-                    imageInput.click();
-                }, 50);
+                imageInput.click();
             }
         });
 
         imageInput.addEventListener('change', (e) => {
             this.handleImageSelect(e);
-            imageInput.removeAttribute('capture');
         });
 
         // Grade selection
@@ -119,9 +114,7 @@ class AITutorApp {
     openCamera() {
         const imageInput = document.getElementById('imageInput');
         imageInput.setAttribute('capture', 'environment');
-        setTimeout(() => {
-            imageInput.click();
-        }, 50);
+        imageInput.click();
     }
 
     // ===== AI Processing =====
