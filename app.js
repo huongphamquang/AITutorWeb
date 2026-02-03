@@ -26,12 +26,14 @@ class AITutorApp {
 
         imageUploadArea.addEventListener('click', (e) => {
             if (!e.target.closest('.remove-image-btn')) {
+                imageInput.removeAttribute('capture');
                 imageInput.click();
             }
         });
 
         imageInput.addEventListener('change', (e) => {
             this.handleImageSelect(e);
+            imageInput.removeAttribute('capture');
         });
 
         // Grade selection
